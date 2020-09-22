@@ -114,6 +114,9 @@ var acc = document.getElementsByClassName("accordion");
             addActiveClass();
             clickToScroll();
 
+            window.addEventListener('DOMContentLoaded', function(){
+    window.addEventListener('resize', function(){
+        if(window.innerWidth > 776 ) {
             window.addEventListener('scroll', function(){
                 var nav = document.getElementById('nav');
                 nav.classList.toggle('active-nav', window.scrollY > 200)
@@ -122,3 +125,9 @@ var acc = document.getElementsByClassName("accordion");
                 var nav = document.getElementById('nav');
                 nav.classList.toggle('scale', window.scrollY > 120 && window.scrollY < 200)
             })
+        }else {
+            document.getElementById('nav').classList.remove('scale')
+            document.getElementById('nav').classList.remove('active-nav')
+        }
+    })
+})
